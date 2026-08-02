@@ -24,6 +24,10 @@
     --ui:"Helvetica Neue", Helvetica, Arial, sans-serif;
     --display:"Helvetica Neue", Helvetica, Arial, sans-serif;
     --edge:clamp(1.25rem, 4vw, 3rem);
+    /* corpo del titolo: usato anche per allineare il paragrafo */
+    --titolo:clamp(2rem, 13vw, 12.5rem);
+    /* larghezza di "ATTENTI" in em: dove cade la I di ATTENTION */
+    --alla-i:3.73;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
@@ -67,7 +71,7 @@
   h1{
     font-family:var(--display);
     font-weight:700;
-    font-size:clamp(2.75rem, 13.5vw, 12.5rem);
+    font-size:var(--titolo);
     line-height:.86;
     letter-spacing:-.035em;
     text-transform:uppercase;
@@ -76,8 +80,10 @@
   /* riga 1: TO — dicitura — SEEK */
   h1 .line{
     display:flex;
+    flex-wrap:nowrap;
     align-items:center;
-    gap:clamp(.6rem,2.5vw,2.5rem);
+    white-space:nowrap;
+    gap:clamp(.5rem,2.5vw,2.5rem);
   }
 
   h1 .accent{color:var(--kult)}
@@ -135,13 +141,8 @@
   }
 
   @media (max-width:640px){
-    h1 .line{
-      flex-direction:column;
-      align-items:flex-start;
-      gap:.4rem;
-    }
-    h1 .kicker{order:-1}
-    .note{max-width:none}
+    /* il paragrafo va a capo dove cade la I di ATTENTION */
+    .teaser{max-width:calc(var(--titolo) * var(--alla-i))}
   }
 
   @media (prefers-reduced-motion:reduce){
