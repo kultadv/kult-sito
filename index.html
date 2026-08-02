@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To Seek Attention | Kult Advertising</title>
+<style>
+  :root{
+    --paper:#000000;
+    --ink:#ffffff;
+    --kult:#ec009f;
+    --ui:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    --display:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    --edge:clamp(1.25rem, 4vw, 3rem);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html,body{height:100%}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--ui);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .page{
+    min-height:100svh;
+    min-height:100dvh;
+    display:grid;
+    grid-template-rows:auto 1fr;
+    padding:var(--edge);
+    gap:clamp(2rem,6vh,4rem);
+  }
+
+  /* ---- rail (Arial) ---- */
+  .rail{
+    font-family:var(--ui);
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+
+  /* ---- teaser ---- */
+  main{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:clamp(1.5rem,4vh,2.5rem);
+  }
+
+  h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(2.75rem, 13.5vw, 12.5rem);
+    line-height:.86;
+    letter-spacing:-.035em;
+    text-transform:uppercase;
+  }
+
+  /* riga 1: TO — dicitura — SEEK */
+  h1 .line{
+    display:flex;
+    align-items:center;
+    gap:clamp(.6rem,2.5vw,2.5rem);
+  }
+
+  h1 .accent{color:var(--kult)}
+
+  h1 .kicker{
+    font-family:var(--ui);
+    font-size:clamp(.6rem,.85vw,.78rem);
+    font-weight:700;
+    line-height:1.35;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+
+  /* ---- testo teaser ---- */
+  .teaser{
+    display:flex;
+    flex-direction:column;
+    gap:.85rem;
+    max-width:52ch;
+  }
+
+  .teaser .lead{
+    font-family:var(--ui);
+    font-size:clamp(1rem,1.6vw,1.35rem);
+    font-weight:700;
+    line-height:1.25;
+    letter-spacing:-.01em;
+  }
+
+  .teaser .lead em{
+    font-style:normal;
+    color:var(--kult);
+  }
+
+  .teaser p{
+    font-family:var(--ui);
+    font-size:clamp(.82rem,1.05vw,.95rem);
+    font-weight:400;
+    line-height:1.55;
+    color:rgba(255,255,255,.72);
+  }
+
+  /* ---- occhiello in testa ---- */
+  .out{
+    font-family:var(--ui);
+    font-size:clamp(.78rem,1.05vw,.95rem);
+    font-weight:700;
+    line-height:1.4;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--kult);
+    max-width:46ch;
+    margin-top:.9rem;
+  }
+
+  @media (max-width:640px){
+    h1 .line{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:.4rem;
+    }
+    h1 .kicker{order:-1}
+    .note{max-width:none}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important}
+  }
+</style>
+</head>
+<body>
+
+  <div class="page">
+
+    <header>
+      <p class="rail">Kult presenta</p>
+      <p class="out">Il report che racconta dove si è spostata l'attenzione degli italiani, e come arrivarci prima degli altri. In arrivo.</p>
+    </header>
+
+    <main>
+      <h1>
+        <span class="line">
+          <span>To</span>
+          <span class="kicker">Streaming<br>Marketing<br>Report</span>
+          <span class="accent">Seek</span>
+        </span>
+        <span class="line">Attention</span>
+      </h1>
+
+      <div class="teaser">
+        <p>46 milioni di ore al mese dentro le piattaforme. 95% di view-through rate. 39% compra un brand dopo averlo visto lì. 49% è il peso della creatività sull'incremento di vendite. Scopri dove il pubblico ha riportato la sua attenzione.</p>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>
