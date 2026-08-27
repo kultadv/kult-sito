@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="image" href="magazine-images/toseekattention-magazine-01-1600.webp" imagesrcset="magazine-images/toseekattention-magazine-01-800.webp 800w, magazine-images/toseekattention-magazine-01-1600.webp 1600w" imagesizes="(max-width: 1500px) 100vw, 1500px" type="image/webp" fetchpriority="high">
+<title>To Seek Attention | Streaming Marketing Report — Kult</title>
+<meta name="description" content="Sfoglia il report To Seek Attention: dove si è spostata l'attenzione degli italiani, e come arrivarci prima degli altri.">
+<link rel="canonical" href="https://www.kult-adv.com/toseekattention-magazine.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kult">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://www.kult-adv.com/toseekattention-magazine.html">
+<meta property="og:title" content="To Seek Attention | Streaming Marketing Report">
+<meta property="og:description" content="Sfoglia il report To Seek Attention: dove si è spostata l'attenzione degli italiani, e come arrivarci prima degli altri.">
+<meta property="og:image" content="https://www.kult-adv.com/kult-social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="To Seek Attention | Streaming Marketing Report">
+<meta name="twitter:description" content="Sfoglia il report To Seek Attention: dove si è spostata l'attenzione degli italiani, e come arrivarci prima degli altri.">
+<meta name="twitter:image" content="https://www.kult-adv.com/kult-social-preview.jpg">
+
+<link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+  @font-face{
+    font-family:"Inter";
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url("fonts/inter-400.woff2") format("woff2");
+  }
+  @font-face{
+    font-family:"Inter";
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url("fonts/inter-700.woff2") format("woff2");
+  }
+
+  :root{
+    --paper:#000000;
+    --ink:#ffffff;
+    --kult:#df07f9;
+    --muted:#8c8c88;
+    --ui:"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --pad:clamp(1.25rem, 4.5vw, 3.5rem);
+    --gap:clamp(.4rem, 1.5vw, 1.2rem);
+    --maxw:1500px;
+    --masthead-h:0px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+
+  /* Android (in particolare il browser interno di Instagram) ingrandisce */
+  /* da solo il testo dei blocchi grandi e spacca il layout se non disattivato */
+  html{
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--ui);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* ── Intestazione: solo freccia back ── */
+  .masthead{
+    position:sticky; top:0; z-index:10;
+    width:min(100%, 1400px); margin-inline:auto;
+    padding:var(--pad);
+    background:var(--paper);
+  }
+  .back{
+    position:relative;
+    display:inline-flex; align-items:center; justify-content:center;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .back::before{
+    content:"";position:absolute;left:50%;top:50%;width:48px;height:44px;
+    transform:translate(-50%,-50%);
+  }
+  .back svg{display:block}
+  .back:hover,.back:focus-visible{color:var(--kult)}
+  .back:focus-visible{outline:1px solid var(--ink);outline-offset:5px}
+
+  /* ── Pagine che scorrono ── */
+  .gallery{ max-width:var(--maxw); margin:0 auto; padding-bottom:var(--gap); display:flex; flex-direction:column; gap:var(--gap); }
+  .gallery img{
+    width:auto; height:auto; display:block;
+    max-width:100%;
+    max-height:calc(100vh - var(--masthead-h) - 40px);
+    max-height:calc(100dvh - var(--masthead-h) - 40px);
+    object-fit:contain;
+    margin-inline:auto;
+    -webkit-user-select:none; user-select:none;
+    cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16"/><path d="M4 11V4h7"/><path d="M20 13v7h-7"/></g></svg>') 6 6, zoom-in;
+  }
+
+  /* ── Overlay a tutto schermo (lightbox) ── */
+  .lightbox{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(0,0,0,.96);
+    display:none; align-items:center; justify-content:center;
+    padding:clamp(.5rem, 2vw, 2rem);
+    cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l6 6"/><path d="M10 4V10H4"/><path d="M20 20l-6-6"/><path d="M14 20V14H20"/></g></svg>') 6 6, zoom-out;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{
+    max-width:100%; max-height:100%;
+    object-fit:contain;
+    display:block;
+    -webkit-user-select:none; user-select:none;
+  }
+  .lightbox .nav-zone{
+    position:fixed; z-index:101;
+    background:transparent; border:0; padding:0;
+    outline:none;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .lightbox .nav-zone.prev{ cursor:w-resize; }
+  .lightbox .nav-zone.next{ cursor:e-resize; }
+  .lightbox .nav-zone.dismiss{
+    cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l6 6"/><path d="M10 4V10H4"/><path d="M20 20l-6-6"/><path d="M14 20V14H20"/></g></svg>') 6 6, zoom-out;
+  }
+  .lightbox .close{
+    position:fixed; z-index:102; top:clamp(1rem,3vw,2rem); right:clamp(1rem,3vw,2rem);
+    color:var(--ink); font-size:1.6rem; line-height:1;
+    background:none; border:0; cursor:pointer; padding:.3rem;
+    font-family:var(--ui);
+  }
+  .lightbox .close::before{
+    content:"";position:absolute;left:50%;top:50%;width:48px;height:48px;
+    transform:translate(-50%,-50%);
+  }
+  .lightbox .close:hover{ color:var(--kult); }
+
+  @media (max-width: 600px){
+    :root{ --gap:.3rem; }
+    .gallery img{ width:100%; max-height:none; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important}
+  }
+</style>
+</head>
+<body>
+
+  <header class="masthead">
+    <a class="back" href="toseekattention.html" aria-label="Indietro">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+    </a>
+  </header>
+
+  <main class="gallery" id="gallery">
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-01-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-01-800.webp 800w, magazine-images/toseekattention-magazine-01-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-01-1600.webp"
+		width="1600"
+		height="1114"
+		alt="Pagina 1 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		fetchpriority="high"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-02-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-02-800.webp 800w, magazine-images/toseekattention-magazine-02-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-02-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 2 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-03-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-03-800.webp 800w, magazine-images/toseekattention-magazine-03-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-03-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 3 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-04-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-04-800.webp 800w, magazine-images/toseekattention-magazine-04-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-04-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 4 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-05-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-05-800.webp 800w, magazine-images/toseekattention-magazine-05-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-05-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 5 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-06-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-06-800.webp 800w, magazine-images/toseekattention-magazine-06-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-06-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 6 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-07-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-07-800.webp 800w, magazine-images/toseekattention-magazine-07-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-07-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 7 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-08-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-08-800.webp 800w, magazine-images/toseekattention-magazine-08-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-08-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 8 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-09-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-09-800.webp 800w, magazine-images/toseekattention-magazine-09-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-09-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 9 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-10-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-10-800.webp 800w, magazine-images/toseekattention-magazine-10-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-10-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 10 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-11-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-11-800.webp 800w, magazine-images/toseekattention-magazine-11-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-11-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 11 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-12-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-12-800.webp 800w, magazine-images/toseekattention-magazine-12-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-12-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 12 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-13-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-13-800.webp 800w, magazine-images/toseekattention-magazine-13-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-13-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 13 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-14-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-14-800.webp 800w, magazine-images/toseekattention-magazine-14-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-14-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 14 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-15-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-15-800.webp 800w, magazine-images/toseekattention-magazine-15-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-15-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 15 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-16-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-16-800.webp 800w, magazine-images/toseekattention-magazine-16-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-16-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 16 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-17-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-17-800.webp 800w, magazine-images/toseekattention-magazine-17-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-17-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 17 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-18-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-18-800.webp 800w, magazine-images/toseekattention-magazine-18-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-18-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 18 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-19-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-19-800.webp 800w, magazine-images/toseekattention-magazine-19-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-19-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 19 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-20-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-20-800.webp 800w, magazine-images/toseekattention-magazine-20-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-20-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 20 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-21-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-21-800.webp 800w, magazine-images/toseekattention-magazine-21-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-21-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 21 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-22-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-22-800.webp 800w, magazine-images/toseekattention-magazine-22-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-22-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 22 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-23-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-23-800.webp 800w, magazine-images/toseekattention-magazine-23-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-23-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 23 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-24-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-24-800.webp 800w, magazine-images/toseekattention-magazine-24-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-24-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 24 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-25-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-25-800.webp 800w, magazine-images/toseekattention-magazine-25-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-25-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 25 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-26-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-26-800.webp 800w, magazine-images/toseekattention-magazine-26-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-26-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 26 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-27-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-27-800.webp 800w, magazine-images/toseekattention-magazine-27-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-27-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 27 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-28-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-28-800.webp 800w, magazine-images/toseekattention-magazine-28-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-28-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 28 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-29-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-29-800.webp 800w, magazine-images/toseekattention-magazine-29-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-29-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 29 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-30-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-30-800.webp 800w, magazine-images/toseekattention-magazine-30-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-30-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 30 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-31-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-31-800.webp 800w, magazine-images/toseekattention-magazine-31-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-31-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 31 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-32-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-32-800.webp 800w, magazine-images/toseekattention-magazine-32-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-32-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 32 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-33-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-33-800.webp 800w, magazine-images/toseekattention-magazine-33-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-33-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 33 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-34-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-34-800.webp 800w, magazine-images/toseekattention-magazine-34-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-34-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 34 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-35-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-35-800.webp 800w, magazine-images/toseekattention-magazine-35-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-35-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 35 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-36-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-36-800.webp 800w, magazine-images/toseekattention-magazine-36-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-36-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 36 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-37-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-37-800.webp 800w, magazine-images/toseekattention-magazine-37-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-37-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 37 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-38-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-38-800.webp 800w, magazine-images/toseekattention-magazine-38-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-38-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 38 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-39-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-39-800.webp 800w, magazine-images/toseekattention-magazine-39-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-39-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 39 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-40-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-40-800.webp 800w, magazine-images/toseekattention-magazine-40-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-40-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 40 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-41-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-41-800.webp 800w, magazine-images/toseekattention-magazine-41-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-41-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 41 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-42-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-42-800.webp 800w, magazine-images/toseekattention-magazine-42-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-42-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 42 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-43-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-43-800.webp 800w, magazine-images/toseekattention-magazine-43-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-43-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 43 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-44-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-44-800.webp 800w, magazine-images/toseekattention-magazine-44-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-44-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 44 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-45-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-45-800.webp 800w, magazine-images/toseekattention-magazine-45-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-45-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 45 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-46-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-46-800.webp 800w, magazine-images/toseekattention-magazine-46-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-46-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 46 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-47-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-47-800.webp 800w, magazine-images/toseekattention-magazine-47-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-47-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 47 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-48-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-48-800.webp 800w, magazine-images/toseekattention-magazine-48-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-48-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 48 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-49-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-49-800.webp 800w, magazine-images/toseekattention-magazine-49-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-49-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 49 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-50-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-50-800.webp 800w, magazine-images/toseekattention-magazine-50-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-50-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 50 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-51-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-51-800.webp 800w, magazine-images/toseekattention-magazine-51-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-51-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 51 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-52-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-52-800.webp 800w, magazine-images/toseekattention-magazine-52-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-52-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 52 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-53-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-53-800.webp 800w, magazine-images/toseekattention-magazine-53-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-53-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 53 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-54-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-54-800.webp 800w, magazine-images/toseekattention-magazine-54-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-54-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 54 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-55-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-55-800.webp 800w, magazine-images/toseekattention-magazine-55-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-55-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 55 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-56-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-56-800.webp 800w, magazine-images/toseekattention-magazine-56-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-56-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 56 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+	<img
+		class="pg"
+		src="magazine-images/toseekattention-magazine-57-1600.webp"
+		srcset="magazine-images/toseekattention-magazine-57-800.webp 800w, magazine-images/toseekattention-magazine-57-1600.webp 1600w"
+		sizes="(max-width: 1500px) 100vw, 1500px"
+		data-full="magazine-images/toseekattention-magazine-57-1600.webp"
+		width="1600"
+		height="1131"
+		alt="Pagina 57 del report To Seek Attention di KULT"
+		draggable="false"
+		oncontextmenu="return false"
+		loading="lazy" decoding="async"
+	/>
+  </main>
+
+  <!-- Overlay per l'ingrandimento a tutto schermo -->
+  <div class="lightbox" id="lightbox">
+    <button class="close" id="close" aria-label="Chiudi">&times;</button>
+    <img id="lightbox-img" src="" alt="" draggable="false" oncontextmenu="return false">
+    <button class="nav-zone prev" id="previous-page" aria-label="Pagina precedente"></button>
+    <button class="nav-zone dismiss" id="dismiss-lightbox" aria-label="Chiudi immagine ingrandita"></button>
+    <button class="nav-zone next" id="next-page" aria-label="Pagina successiva"></button>
+  </div>
+
+  <script>
+    (function(){
+      var lb = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lightbox-img');
+      var gallery = document.getElementById('gallery');
+      var pages = gallery.querySelectorAll('img');
+      var currentIndex = 0;
+      var previousPage = document.getElementById('previous-page');
+      var dismissLightbox = document.getElementById('dismiss-lightbox');
+      var nextPage = document.getElementById('next-page');
+      var masthead = document.querySelector('.masthead');
+      function updateMastheadHeight(){
+        document.documentElement.style.setProperty('--masthead-h', masthead.offsetHeight + 'px');
+      }
+      updateMastheadHeight();
+      window.addEventListener('resize', updateMastheadHeight);
+      function show(index){
+        currentIndex = (index + pages.length) % pages.length;
+        lbImg.src = pages[currentIndex].dataset.full;
+        lbImg.alt = pages[currentIndex].alt;
+        if(lbImg.complete) requestAnimationFrame(updateNavigationZones);
+      }
+      function updateNavigationZones(){
+        if(!lb.classList.contains('open')) return;
+        var rect = lbImg.getBoundingClientRect();
+        var width = rect.width / 3;
+        [previousPage, dismissLightbox, nextPage].forEach(function(zone, index){
+          zone.style.left = (rect.left + width * index) + 'px';
+          zone.style.top = rect.top + 'px';
+          zone.style.width = width + 'px';
+          zone.style.height = rect.height + 'px';
+        });
+      }
+      function open(index){ lb.classList.add('open'); document.body.style.overflow='hidden'; show(index); }
+      function close(){ lb.classList.remove('open'); lbImg.src=''; document.body.style.overflow=''; }
+      gallery.addEventListener('click', function(e){
+        if(e.target && e.target.tagName === 'IMG'){
+          open(Array.prototype.indexOf.call(pages, e.target));
+        }
+      });
+      previousPage.addEventListener('click', function(e){ e.stopPropagation(); show(currentIndex - 1); });
+      dismissLightbox.addEventListener('click', function(e){ e.stopPropagation(); close(); });
+      nextPage.addEventListener('click', function(e){ e.stopPropagation(); show(currentIndex + 1); });
+      lbImg.addEventListener('load', updateNavigationZones);
+      window.addEventListener('resize', updateNavigationZones);
+      lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+      document.getElementById('close').addEventListener('click', function(e){
+        e.stopPropagation();
+        close();
+      });
+      document.addEventListener('keydown', function(e){
+        if(!lb.classList.contains('open')) return;
+        if(e.key === 'Escape') close();
+        if(e.key === 'ArrowRight') show(currentIndex + 1);
+        if(e.key === 'ArrowLeft') show(currentIndex - 1);
+      });
+    })();
+  </script>
+</body>
+</html>
