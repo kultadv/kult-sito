@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>To Seek Attention | Streaming Marketing Report — Kult</title>
+<meta name="description" content="Il report che racconta dove si è spostata l'attenzione degli italiani, e come ottenerla prima degli altri. 46 milioni di ore al mese dentro le piattaforme di streaming, 95% di view-through rate, 49% il peso della creatività sulle vendite.">
+<link rel="canonical" href="https://www.kult-adv.com/toseekattention.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kult">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://www.kult-adv.com/toseekattention.html">
+<meta property="og:title" content="To Seek Attention | Streaming Marketing Report">
+<meta property="og:description" content="Il report che racconta dove si è spostata l'attenzione degli italiani, e come ottenerla prima degli altri.">
+<meta property="og:image" content="https://www.kult-adv.com/kult-social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="To Seek Attention | Streaming Marketing Report">
+<meta name="twitter:description" content="Il report che racconta dove si è spostata l'attenzione degli italiani, e come ottenerla prima degli altri.">
+<meta name="twitter:image" content="https://www.kult-adv.com/kult-social-preview.jpg">
+
+<link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+  @font-face{
+    font-family:"Inter";
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url("fonts/inter-400.woff2") format("woff2");
+  }
+  @font-face{
+    font-family:"Inter";
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url("fonts/inter-700.woff2") format("woff2");
+  }
+
+  :root{
+    --paper:#000000;
+    --ink:#ffffff;
+    --kult:#df07f9;
+    --ui:"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --display:"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --edge:clamp(1.25rem, 4vw, 3rem);
+    /* corpo del titolo: usato anche per allineare il paragrafo */
+    --titolo:clamp(2rem, 13vw, 12.5rem);
+    /* larghezza di "ATTENTI" in em: dove cade la I di ATTENTION */
+    --alla-i:3.73;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html,body{height:100%}
+
+  /* Android (in particolare il browser interno di Instagram) ingrandisce */
+  /* da solo il testo dei blocchi grandi e spacca il layout se non disattivato */
+  html{
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--ui);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .page{
+    position:relative;
+    z-index:1;
+    min-height:100vh;
+    min-height:100svh;
+    min-height:100dvh;
+    display:grid;
+    grid-template-rows:auto 1fr;
+    padding:var(--edge);
+    gap:clamp(2rem,6vh,4rem);
+  }
+
+  /* ---- rail (Arial) ---- */
+  .rail{
+    font-family:var(--ui);
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+
+  /* ---- teaser ---- */
+  main{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:clamp(1.5rem,4vh,2.5rem);
+  }
+
+  h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:var(--titolo);
+    line-height:.86;
+    letter-spacing:-.035em;
+    text-transform:uppercase;
+  }
+
+  /* riga 1: TO — dicitura — SEEK */
+  h1 .line{
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    white-space:nowrap;
+    gap:clamp(.5rem,2.5vw,2.5rem);
+  }
+
+  h1 .accent{color:var(--kult)}
+
+  h1 .kicker{
+    font-family:var(--ui);
+    font-size:clamp(.6rem,.85vw,.78rem);
+    font-weight:700;
+    line-height:1.35;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+
+  /* ---- testo teaser ---- */
+  .teaser{
+    display:flex;
+    flex-direction:column;
+    gap:.85rem;
+    max-width:52ch;
+  }
+
+  .teaser .lead{
+    font-family:var(--ui);
+    font-size:clamp(1rem,1.6vw,1.35rem);
+    font-weight:700;
+    line-height:1.25;
+    letter-spacing:-.01em;
+  }
+
+  .teaser .lead em{
+    font-style:normal;
+    color:var(--kult);
+  }
+
+  .teaser p{
+    font-family:var(--ui);
+    font-size:clamp(.82rem,1.05vw,.95rem);
+    font-weight:400;
+    line-height:1.55;
+    color:rgba(255,255,255,.72);
+  }
+
+  /* ---- CTA: bottone rettangolare, contorno fucsia, interno nero ---- */
+  /* apre il popup del form Sender agganciato al click (vedi dashboard Sender) */
+  .cta-link{
+    display:inline-flex;
+    align-items:center;
+    align-self:flex-start;
+    margin-top:.4rem;
+    padding:.85rem 1.6rem;
+    border-radius:0;
+    border:1px solid var(--kult);
+    background:#000;
+    color:var(--kult);
+    font-family:var(--ui);
+    font-weight:700;
+    font-size:.82rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    cursor:pointer;
+    appearance:none;
+    -webkit-appearance:none;
+    transition:opacity .3s ease;
+  }
+  .cta-link:hover,
+  .cta-link:focus-visible{opacity:.8}
+  .cta-link:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+
+  /* ---- occhiello in testa ---- */
+  .out{
+    font-family:var(--ui);
+    font-size:clamp(.78rem,1.05vw,.95rem);
+    font-weight:700;
+    line-height:1.4;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--kult);
+    max-width:46ch;
+    margin-top:.9rem;
+  }
+
+  @media (max-width:640px){
+    /* il paragrafo va a capo dove cade la I di ATTENTION */
+    .teaser{max-width:calc(var(--titolo) * var(--alla-i))}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important; animation:none !important}
+  }
+</style>
+
+<script>
+  (function (s, e, n, d, er) {
+    s['Sender'] = er;
+    s[er] = s[er] || function () {
+      (s[er].q = s[er].q || []).push(arguments)
+    }, s[er].l = 1 * new Date();
+    s[er].on = function(event, callback) {
+      s[er].listeners = s[er].listeners || {};
+      (s[er].listeners[event] = s[er].listeners[event] || []).push(callback);
+    };
+    var a = e.createElement(n),
+        m = e.getElementsByTagName(n)[0];
+    a.async = 1;
+    a.src = d;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+  sender('f268493e765018')
+</script>
+</head>
+<body>
+
+  <div class="page">
+
+    <header>
+      <p class="rail">Kult presenta</p>
+      <p class="out">Il report che racconta dove si è spostata l'attenzione degli italiani, e come ottenerla prima degli altri.</p>
+    </header>
+
+    <main>
+      <h1>
+        <span class="line">
+          <span>To</span>
+          <span class="kicker">Streaming<br>Marketing<br>Report</span>
+          <span class="accent">Seek</span>
+        </span>
+        <span class="line">Attention</span>
+      </h1>
+
+      <div class="teaser">
+        <p>46 milioni di ore al mese dentro le piattaforme. 95% di view-through rate. 39% compra un brand dopo averlo visto lì. 49% è il peso della creatività sull'incremento di vendite. Scopri dove il pubblico ha riportato la sua attenzione.</p>
+        <button type="button" class="cta-link" id="scarica-report">Scarica il report</button>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>
